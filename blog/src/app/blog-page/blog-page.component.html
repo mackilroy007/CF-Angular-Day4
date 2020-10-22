@@ -1,0 +1,23 @@
+<br>
+<!-- cards that pull info from POI.ts -->
+<div class="row d-flex justify-content-center">
+    <div *ngFor="let i of POI ; index as POIID">
+        <a [routerLink]="['/POI', POIID]">
+            <div class="card mx-auto  mb-3 bg-dark text-light" style="max-width: 50rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-4 my-auto">
+                        <img src={{i.img}} class="card-img" alt={{i.name}}>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i.name }}</h5>
+                            <p class="card-text"><small class="text-muted">{{i.date}}</small></p>
+                            <p class="card-text" [innerHTML]="i.short"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
